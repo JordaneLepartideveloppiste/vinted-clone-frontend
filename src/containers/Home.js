@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import ProductsList from "../components/ProductsList";
+import ProductsList from "../components/ProductCardHome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProductCardHome from "../components/ProductCardHome";
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -25,9 +28,8 @@ const Home = () => {
       fetchData();
     }, []);
 
-    const [productsList, setProductsList] = useState([
-        
-    ]);
+
+    
 
 
     return isLoading ? (
@@ -36,7 +38,18 @@ const Home = () => {
         <div className="home">
             <div className="home_content">
                 <Header />
-                <ProductsList />
+                {data.offers.map(({product_pictures, product_price, product_details, product_name}, _id) => {
+                    return (
+                      <Link to="/offer/:id">
+                        <ProductCardHome
+                          product_pictures={product_pictures}
+                          product_price={product_price}
+                          product_details={product_details}
+                          product_name={product_name}
+                        />
+                      </Link>
+                    );
+                })}
             </div>
         </div>);
     
