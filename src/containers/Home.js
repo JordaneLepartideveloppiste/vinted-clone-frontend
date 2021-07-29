@@ -38,9 +38,10 @@ const Home = () => {
         <div className="home">
             <div className="home_content">
                 <Header />
-                {data.offers.map(({product_pictures, product_price, product_details, product_name}, _id) => {
+                {data.offers.map(({product_pictures, product_price, product_details, product_name, _id}, index) => {
+
                     return (
-                      <Link to="/offer/:id">
+                      <Link to={`/offer/${_id}`}>
                         <ProductCardHome
                           product_pictures={product_pictures}
                           product_price={product_price}

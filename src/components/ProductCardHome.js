@@ -5,13 +5,14 @@ const ProductCardHome = ({
   product_price,
   product_details,
   product_name,
+  _id
 }) => {
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
   };
 
   return (
-    <div className="product_card_home">
+    <div className="product_card_home" key={_id}>
       <img src={product_pictures[0].secure_url} alt="product_pic" />
       <div className="first_details">
         <span id="prod_price">{product_price} €</span>
