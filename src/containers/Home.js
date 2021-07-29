@@ -4,13 +4,16 @@ import Header from "../components/Header";
 import ProductsList from "../components/ProductCardHome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductCardHome from "../components/ProductCardHome";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import Cookies from "js-cookie";
 
 
 const Home = () => {
 
     const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(true);
+
+    const token = Cookies.get("userToken");
 
     useEffect(() => {
       const fetchData = async () => {
@@ -34,7 +37,7 @@ const Home = () => {
 
     return isLoading ? (
         <span>Chargement des données...</span>
-    ) : (
+    ) : token ? (
         <div className="home">
             <div className="home_content">
                 <Header />
@@ -52,7 +55,9 @@ const Home = () => {
                     );
                 })}
             </div>
-        </div>);
+        </div>) : (
+            <Redirect to="/login" />
+        );
     
 };
 
