@@ -1,8 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import ProductsList from "../components/ProductCardHome";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductCardHome from "../components/ProductCardHome";
 import { Link, Redirect } from "react-router-dom";
 import Cookies from "js-cookie";
@@ -41,12 +39,12 @@ const Home = () => {
         <div className="home">
             <div className="home_content">
                 <Header />
-                {data.offers.map(({product_pictures, product_price, product_details, product_name, _id}, index) => {
+                {data.offers.map(({product_image, product_price, product_details, product_name, _id}, index) => {
 
                     return (
                       <Link to={`/offer/${_id}`}>
                         <ProductCardHome
-                          product_pictures={product_pictures}
+                          product_image={product_image}
                           product_price={product_price}
                           product_details={product_details}
                           product_name={product_name}

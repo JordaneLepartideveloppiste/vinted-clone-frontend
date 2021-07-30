@@ -1,49 +1,59 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useHistory } from "react-router-dom";
 
+const Login = ({ setUser }) => {
+  const history = useHistory();
 
-const Login = ({setUser}) => {
-    const history = useHistory();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const [data, setData] = useState();
-    const [isLoading, setIsLoading] = useState(true);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        
-          const fetchData = async () => {
-            try {
-              const res = await axios.post(
-                "https://lereacteur-vinted-api.herokuapp.com/user/login"
-              );
-              console.log(res.data);
-              setData(res.data);
-              setIsLoading(false);
-            } catch (err) {
-              console.log(err.message);
-            }
-          };
-          fetchData();
-      
-
-        const token = "12345";
-        setUser(token);
-        history.push("/");
-    }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     
+      try {
+        const res = await axios.post(
+          "https://lereacteur-vinted-api.herokuapp.com/user/login",
+          {
+            email, //email: email
+            password, // password : password
+          }
+        );
+        console.log(res.data);
+        if (res.data.token) {
+          setUser(res.data.token);
+          history.push("/");
+        }
+      } catch (err) {
+        console.log(err.message);
+      }
+   
+  };
 
-    return (
-      <div className="login">
+  return (
+    <div className="login">
+      <div className="login_content">
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Votre email" />
-          <input type="password" placeholder="Votre mot de passe" />
+          <input
+            type="email"
+            placeholder="Votre email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Votre mot de passe"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
           <input type="submit" value="Se connecter" />
         </form>
       </div>
-    );
+    </div>
+  );
 };
 
 export default Login;
