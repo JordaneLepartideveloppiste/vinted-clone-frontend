@@ -37,7 +37,7 @@ const Offer = () => {
     return isLoading ? (
       <span>Chargement des données...</span>
     ) : (
-      <ProductCardOffer image={data.product_image.secure_url} price={data.product_price} details={data.product_details} name={data.product_name} description={data.product_description} owner={data.owner.account.username}/>
+      <ProductCardOffer image={data.product_image.secure_url} price={data.product_price} details={data.product_details} name={data.product_name} description={data.product_description} owner={data.owner.account.username} pictures={data.product_pictures}/>
     );
 };
 

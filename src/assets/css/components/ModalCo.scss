@@ -1,0 +1,31 @@
+.modal {
+    width: 33vw;
+    background-color: #fff;
+    border-radius: 6px;
+    z-index: 2;
+    position: absolute;
+    top: 8rem;
+    left: 33%;
+    
+    .modal_content {
+ 
+        .modal_header {
+            #modalClose_btn {
+                border: none;
+                background-color: transparent;
+                font-size: 1.6rem;
+                color: #0aaeb7;
+                float: right;
+                margin: 0.4rem;
+               
+            }
+        }
+        .modal_body {
+            padding: 3rem 1.5rem;
+            
+        }
+        .modal_footer {
+
+        }
+    }
+}

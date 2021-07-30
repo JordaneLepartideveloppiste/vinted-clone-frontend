@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "../assets/css/components/SignUp.scss"
 
-const SignUp = ({setUser}) => {
+const SignUp = ({setUser, setShowModal, setModalOnLogin}) => {
 
-    const history= useHistory();
 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -26,7 +26,7 @@ const SignUp = ({setUser}) => {
              console.log(res.data);
            if (res.data.token) {
             setUser(res.data.token);
-            history.push('/');
+            setShowModal(false);
            }
         } catch (err) {
             console.log(err.response);
@@ -39,15 +39,53 @@ const SignUp = ({setUser}) => {
 
   return (
     <div className="signup">
-      <form onSubmit={handleSubmit} >
-        <input type="text" placeholder="Votre nom" onChange={(e) => { setUsername(e.target.value)}} />
-        <input type="email" placeholder="Votre email" onChange={(e) => { setEmail(e.target.value)}} />
-        <input type="password" placeholder="Votre mot de passe" onChange={(e) => { setPassword(e.target.value)}} />
-        <input type="checkbox"/><span>S'inscrire à notre newsletter</span>
-        <p>En m'inscrivant je confirme avoir lu et accepté les Termes & Conditions et Politique de Confidentialité de Vinted. Je confirme avoir au moins 18 ans.</p>
-        <p style={{color: "red"}}>{errorMessage}</p>
-        <input type="submit" value="S'inscrire"/>
-        <Link to="/login">Tu as déjà un compte? Connecte-toi !</Link>
+      <form onSubmit={handleSubmit}>
+        <input
+          className="input_name"
+          type="text"
+          placeholder="Votre nom"
+          onChange={(e) => {
+            setUsername(e.target.value);
+          }}
+        />
+        <input
+          className="input_email"
+          type="email"
+          placeholder="Votre email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
+          className="input_password"
+          type="password"
+          placeholder="Votre mot de passe"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <input className="input_checkbox" type="checkbox" />
+        <span className="input_checkboxLabel">
+          S'inscrire à notre newsletter
+        </span>
+        <p className="text_confirmTerms">
+          En m'inscrivant je confirme avoir lu et accepté les Termes &
+          Conditions et Politique de Confidentialité de Vinted. Je confirme
+          avoir au moins 18 ans.
+        </p>
+        <p className="error_message" style={{ color: "red" }}>
+          {errorMessage}
+        </p>
+        <input className="input_submit" type="submit" value="S'inscrire" />
+        <Link
+          className="link_to_login"
+          to="/login"
+          onClick={() => {
+            setModalOnLogin(true);
+          }}
+        >
+          Tu as déjà un compte? Connecte-toi !
+        </Link>
       </form>
     </div>
   );

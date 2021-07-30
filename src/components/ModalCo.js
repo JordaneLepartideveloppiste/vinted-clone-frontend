@@ -2,10 +2,10 @@
 
 import Login from "./Login";
 import SignUp from "./SignUp";
+import"../assets/css/components/ModalCo.scss";
 
 
-
-const ModalCo = ({showModal, setShowModal, setUser}) => {
+const ModalCo = ({modalOnLogin, setShowModal, setUser, setModalOnLogin}) => {
 
     
     return (
@@ -13,19 +13,26 @@ const ModalCo = ({showModal, setShowModal, setUser}) => {
         <div className="modal_content">
           <div className="modal_header">
             <button
+              id="modalClose_btn"
               onClick={() => {
                 setShowModal(false);
+                setModalOnLogin(false);
               }}
             >
               X
             </button>
           </div>
           <div className="modal_body">
-            {/* {(userToken) ? <Login /> : <SignUp />} */}
+            {modalOnLogin ? (
+              <Login setUser={setUser} setShowModal={setShowModal} />
+            ) : (
+              <SignUp
+                setUser={setUser}
+                setShowModal={setShowModal}
+                setModalOnLogin={setModalOnLogin}/>
+            )}
           </div>
-          <div className="modal_footer">
-            
-          </div>
+          <div className="modal_footer"></div>
         </div>
       </div>
     );

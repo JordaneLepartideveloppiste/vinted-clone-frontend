@@ -7,10 +7,8 @@ import {
   faSearch, faHeart
 } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "./components/Navbar";
-import Login from "./components/Login";
 import { useState } from "react";
 import Cookies from "js-cookie";
-import SignUp from "./components/SignUp";
 library.add(faSearch, faHeart);
 
 
@@ -29,12 +27,6 @@ function App() {
       <Switch>
         <Route path="/offer/:id">
           <Offer />
-        </Route>
-        <Route path="/login">
-          <Login setUser={setUser} />
-        </Route>
-        <Route path="/signup">
-          <SignUp setUser={setUser} />
         </Route>
         <Route path="/">
           <Home />

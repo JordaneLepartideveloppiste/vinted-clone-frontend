@@ -1,9 +1,10 @@
 import axios from "axios";
 import {  useState } from "react";
-import { useHistory } from "react-router-dom";
+import "../assets/css/components/Login.scss"
 
-const Login = ({ setUser }) => {
-  const history = useHistory();
+
+const Login = ({ setUser, setShowModal }) => {
+
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +24,7 @@ const Login = ({ setUser }) => {
         console.log(res.data);
         if (res.data.token) {
           setUser(res.data.token);
-          history.push("/");
+          setShowModal(false);
         }
       } catch (err) {
         console.log(err.message);
@@ -36,6 +37,7 @@ const Login = ({ setUser }) => {
       <div className="login_content">
         <form onSubmit={handleSubmit}>
           <input
+            className="input_email"
             type="email"
             placeholder="Votre email"
             onChange={(e) => {
@@ -43,6 +45,7 @@ const Login = ({ setUser }) => {
             }}
           />
           <input
+          className="input_password"
             type="password"
             placeholder="Votre mot de passe"
             onChange={(e) => {
