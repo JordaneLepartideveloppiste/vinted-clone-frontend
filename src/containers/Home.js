@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import ProductCardHome from "../components/ProductCardHome";
 import { Link, Redirect } from "react-router-dom";
 import Cookies from "js-cookie";
+import ProductList from "../components/ProductList";
 
 
 const Home = () => {
@@ -34,28 +35,23 @@ const Home = () => {
 
 
     return isLoading ? (
-        <span>Chargement des données...</span>
+      <span>Chargement des données...</span>
     ) : token ? (
-        <div className="home">
-            <div className="home_content">
-                <Header />
-                {data.offers.map(({product_image, product_price, product_details, product_name, _id}, index) => {
-
-                    return (
-                      <Link to={`/offer/${_id}`}>
-                        <ProductCardHome
-                          product_image={product_image}
-                          product_price={product_price}
-                          product_details={product_details}
-                          product_name={product_name}
-                        />
-                      </Link>
-                    );
-                })}
-            </div>
-        </div>) : (
-            <Redirect to="/login" />
-        );
+      <div className="home">
+        <div className="home_content">
+          <Header />
+          <ProductList
+            data={data}
+            product_image={data.product_image}
+            product_price={data.product_price}
+            product_details={data.product_details}
+            product_name={data.product_name}
+          />
+        </div>
+      </div>
+    ) : (
+      <Redirect to="/login" />
+    );
     
 };
 

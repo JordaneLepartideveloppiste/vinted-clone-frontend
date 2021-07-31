@@ -1,5 +1,6 @@
 import "../assets/css/components/Header.scss"
 import { Link } from "react-router-dom"
+import scrap from "../assets/img/banner_scrape.png"
 
 
 const Header = () => {
@@ -11,10 +12,10 @@ const Header = () => {
             <Link>
               <button id="start">Vends maintenant</button>
             </Link>
-                <span id="discover">Découvrir comment ça marche</span>
-            
+            <span id="discover">Découvrir comment ça marche</span>
           </div>
         </div>
+        <img src={scrap} alt="scrap_bottom" />
       </div>
     );
 };

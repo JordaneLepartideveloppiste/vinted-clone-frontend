@@ -2,9 +2,10 @@
     width: 33vw;
     background-color: #fff;
     border-radius: 6px;
+    box-shadow: 0rem 0.4rem 3rem rgb(141, 141, 141);
     z-index: 2;
     position: absolute;
-    top: 8rem;
+    top: 5rem;
     left: 33%;
     
     .modal_content {
@@ -14,14 +15,17 @@
                 border: none;
                 background-color: transparent;
                 font-size: 1.6rem;
+                font-weight: bold;
                 color: #0aaeb7;
-                float: right;
-                margin: 0.4rem;
+                position: absolute;
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.4rem 0.8rem;
                
             }
         }
         .modal_body {
-            padding: 3rem 1.5rem;
+            padding: 2rem 1.5rem;
             
         }
         .modal_footer {

@@ -8,13 +8,16 @@ const Login = ({ setUser, setShowModal }) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordConf, setPasswordConf] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     
       try {
-        const res = await axios.post(
+        if (password === passwordConf) {
+            const res = await axios.post(
           "https://lereacteur-vinted-api.herokuapp.com/user/login",
           {
             email, //email: email
@@ -26,6 +29,8 @@ const Login = ({ setUser, setShowModal }) => {
           setUser(res.data.token);
           setShowModal(false);
         }
+     } else {setErrorMessage("Vos mots de passe ne sont pas identiques")}
+        
       } catch (err) {
         console.log(err.message);
       }
@@ -39,20 +44,41 @@ const Login = ({ setUser, setShowModal }) => {
           <input
             className="input_email"
             type="email"
-            placeholder="Votre email"
+            placeholder="Email"
             onChange={(e) => {
               setEmail(e.target.value);
             }}
+            onClick={() => {
+              setEmail("");
+            }}
+            required
           />
           <input
-          className="input_password"
+            className="input_password"
             type="password"
-            placeholder="Votre mot de passe"
+            placeholder="Mot de passe"
             onChange={(e) => {
               setPassword(e.target.value);
             }}
+            onClick={() => {
+              setPassword("");
+            }}
+            required
           />
-          <input type="submit" value="Se connecter" />
+          <input
+            className="input_confirm_password"
+            type="password"
+            placeholder="Confirmation Mot de passe"
+            onChange={(e) => {
+              setPasswordConf(e.target.value);
+            }}
+            onClick={() => {
+              setPasswordConf("");
+            }}
+            required
+          />
+          <p>{errorMessage}</p>
+          <input className="input_submit" type="submit" value="Se connecter" />
         </form>
       </div>
     </div>

@@ -14,7 +14,7 @@
         
 
         .search {
-            background-color:  rgb(229, 234, 234);
+            background-color:  rgb(236, 241, 241);
             border-radius: 4px;
             width: 30vw;
             padding: 0.5rem;
@@ -24,10 +24,11 @@
             }
 
             #search_input {
+                width: 25vw;
                 border: none;
-                background-color:  rgb(229, 234, 234);
-                color: rgb(76, 76, 76);
-                padding-left: 1rem;
+                background-color:  rgb(236, 241, 241);
+                color: rgba(76, 76, 76, 0.6);
+                padding: 0 1rem;
 
                 &:focus {
                     outline: none !important;

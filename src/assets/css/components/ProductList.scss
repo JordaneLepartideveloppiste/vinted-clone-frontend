@@ -1,0 +1,20 @@
+.product_list {
+    margin-top: 1.8rem;
+    .title_home {
+        margin: 2rem 1.8rem;
+        padding-bottom: 1rem;
+        font-size: 2rem;
+    }
+    .product_list_content {
+        margin: 1.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+    
+}

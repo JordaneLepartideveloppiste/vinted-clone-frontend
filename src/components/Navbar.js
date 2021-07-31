@@ -1,9 +1,9 @@
 import logo from "../assets/img/logo_vinted.jpeg"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../assets/css/components/Navbar.scss"
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ModalCo from "./ModalCo";
+import SearchBar from "./SearchBar";
 
 
 
@@ -11,14 +11,7 @@ const Navbar = ({userToken, setUser}) => {
 
 const [showModal, setShowModal] = useState(false);
 const [modalOnLogin, setModalOnLogin] = useState(false);
-const [searchInput, setSearchInput] = useState("Rechercher des articles")
 
-const handleChange = (e) => {
-  setSearchInput(e.target.value);
-}
-const handleClick = () => {
-  setSearchInput("");
-}
   
   
     return (
@@ -29,16 +22,7 @@ const handleClick = () => {
               <img src={logo} alt="logo_vinted" />
             </Link>
           </div>
-          <div className="search">
-            <FontAwesomeIcon icon="search" color="rgb(76, 76, 76)" />
-            <input
-              type="text"
-              id="search_input"
-              value={searchInput}
-              onChange={handleChange}
-              onClick={handleClick}
-            />
-          </div>
+          <SearchBar />
           <div className="connexion">
             {userToken ? (
               <button

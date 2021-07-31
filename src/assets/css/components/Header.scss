@@ -1,6 +1,7 @@
 .header {
     font-family: 'Font';
-    
+    width: 100%;
+        height: 24rem;
 
     .header_content {
         width: 100%;
@@ -13,18 +14,19 @@
         
         .starting_block {
             background-color: #fff;
-            width: 30vw;
+            width: 33vw;
             height: 45vh;
             border-radius: 4px;
             position: relative;
-            top: 3rem;
-            left: 1rem;
+            top: 4rem;
+            left: 1.4rem;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: flex-start;
 
             #ready {
+                
                 font-size: 2rem;
                 font-weight: bold;
                 margin: 1rem 1.4rem;
@@ -36,15 +38,32 @@
                 border: none;
                 border-radius: 4px;
                 padding: 1rem;
-                margin-left: 1rem;
+                margin-left: 1.4rem;
             }
 
             #discover {
                 text-decoration: none;
                 color: #0AAEB7;
-                margin-left: 1rem;
+                margin-left: 1.4rem;
                 margin-bottom: 1.4rem;
             }
         }
+
+        
+
+
     }
+    img {
+            width: 65%;
+            position: absolute;
+            right: 0;
+            bottom: 7.8rem;
+        }
+}
+
+@media screen and (max-width: 960px) {
+    
+}
+@media screen and (max-width: 720px) {
+    
 }

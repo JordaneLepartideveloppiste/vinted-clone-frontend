@@ -1,5 +1,55 @@
 .login {
-    .login_content {
-        
+  .login_content {
+    form {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+
+      .input_email,
+      .input_password,
+      .input_confirm_password {
+        width: 20vw;
+        padding: 1.5rem 0.5rem;
+        padding-left: 1.5rem;
+        text-align: left;
+        font-size: 1rem;
+        border: none;
+        color: rgba(76, 76, 76, 0.2);
+        background-color: rgb(247, 249, 249);
+
+        &:focus {
+          outline: none !important;
+        }
+      }
+
+      .input_email,
+      .input_password {
+        border-bottom: 1px solid rgba(76, 76, 76, 0.2);
+      }
+
+      .input_email {
+        border-radius: 4px 4px 0 0;
+      }
+      .input_confirm_password {
+        border-radius: 0 0 4px 4px;
+      }
+      .input_submit {
+        width: 10vw;
+        background-color: #0aaeb7;
+        color: #fff;
+        padding: 0.4rem;
+        border-radius: 4px;
+        border: 1px solid #0aaeb7;
+
+        margin-bottom: 0.8rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #fff;
+          color: #0aaeb7;
+          border: 1px solid #0aaeb7;
+        }
+      }
     }
+  }
 }
