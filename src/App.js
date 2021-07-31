@@ -4,12 +4,12 @@ import Home from "./containers/Home";
 import Offer from "./containers/Offer";import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faSearch, faHeart
+  faSearch, faHeart, faShieldAlt
 } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 import Cookies from "js-cookie";
-library.add(faSearch, faHeart);
+library.add(faSearch, faHeart, faShieldAlt);
 
 
 function App() {
