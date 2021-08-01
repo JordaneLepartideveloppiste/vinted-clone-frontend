@@ -1,21 +1,42 @@
 .product_list {
-    
-    margin-top: 1.8rem;
+  margin-top: 1rem;
+  .title_list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     .title_home {
-        margin: 2rem 1.8rem;
-        padding-bottom: 1rem;
-        font-size: 2rem;
+      margin: 2rem 1.8rem;
+ 
+      font-size: 2rem;
     }
-    .product_list_content {
-        margin: 1.8rem;
-        display: flex;
-        flex-wrap: wrap;
-        
+    .see_all {
+        margin: 2rem 2.6rem;
+        padding: 0.8rem;
+        color: #0aaeb7;
+        font-size: 1.2rem;
 
-        a {
-            text-decoration: none;
-            color: black;
+        &:hover {
+            background-color: #f9f9f9;
         }
     }
+  }
+  .product_list_content {
+    margin: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
     
+}
+@media screen and (max-width: 720px) {
+  .product_list {
+    margin-top: 14rem;
+  }
 }

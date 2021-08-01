@@ -17,8 +17,6 @@ const ProductCardHome = ({
       <img
         src={product_image.secure_url}
         alt="product_pic"
-        width={235}
-        height={340}
       />
       <div className="first_details">
         <span id="prod_price">{product_price} €</span>
