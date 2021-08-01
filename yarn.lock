@@ -2839,11 +2839,6 @@ body-parser@1.19.0:
     raw-body "2.4.0"
     type-is "~1.6.17"
 
-body-scroll-lock@^2.6.4:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-2.7.1.tgz#caf3f9c91773af1ffb684cd66ed9137b5b737014"
-  integrity sha512-hS53SQ8RhM0e4DsQ3PKz6Gr2O7Kpdh59TWU98GHjaQznL7y4dFycEPk7pFQAikqBaUSCArkc5E3pe7CWIt2fZA==
-
 bonjour@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bonjour/-/bonjour-3.5.0.tgz#8e890a183d8ee9a2393b3844c691a42bcf7bc9f5"
@@ -3321,11 +3316,6 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
-
-classnames@^2.2.3:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
-  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
 
 clean-css@^4.2.3:
   version "4.2.3"
@@ -9356,11 +9346,6 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-accessible-dropdown-menu-hook@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/react-accessible-dropdown-menu-hook/-/react-accessible-dropdown-menu-hook-2.3.1.tgz#70ec48e59043ce439d9cc026e34f01e55385b78f"
-  integrity sha512-vqX48mfFlifAV543m6biWf12Jx3ROGQol9UMrjtwq2HRMd7y1FNWA8cJg5bHQbet/YvyHkuQ/nh1iT3AHOMaaQ==
-
 react-app-polyfill@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-2.0.0.tgz#a0bea50f078b8a082970a9d853dc34b6dcc6a3cf"
@@ -9412,13 +9397,6 @@ react-dom@^17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-dropdown@^1.9.2:
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/react-dropdown/-/react-dropdown-1.9.2.tgz#db6cbc90184e3f6dd7eb40f7ddabac4b09dccf15"
-  integrity sha512-g4eufErTi5P5T5bGK+VmLl//qvAHy79jm6KKx8G2Tl3mG90bpigb+Aw85P+C2JUdAnIIQdv8kP/oHN314GvAfw==
-  dependencies:
-    classnames "^2.2.3"
-
 react-error-overlay@^6.0.9:
   version "6.0.9"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
@@ -9433,11 +9411,6 @@ react-is@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
-
-react-multi-select-component@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/react-multi-select-component/-/react-multi-select-component-4.0.3.tgz#583b83f07af0868e27e52fdb9146cfad49918cf6"
-  integrity sha512-XRAdxakB69UmdRN8s2DmNrqIoZe5kCSBgIXDXb0ZnSri27H2/Er0L2Xu5HLle4Di2OCfEwhKoh6QvyrImORFyg==
 
 react-refresh@^0.8.3:
   version "0.8.3"
@@ -9456,11 +9429,6 @@ react-router-dom@^5.2.0:
     react-router "5.2.0"
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
-
-react-router-modal@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/react-router-modal/-/react-router-modal-1.5.2.tgz#64fa736b0457339415785e086cf3498d5bf61536"
-  integrity sha512-q1a0KJaDI7pJbmMZV/bJYcr2BqsePOAyCgCl8xN7t5IA+3LFQyqFJwvLrMvmPnsjVKR0vaUSrqgObOslgpxs7A==
 
 react-router@5.2.0:
   version "5.2.0"
@@ -9548,13 +9516,6 @@ react-simple-image-slider@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/react-simple-image-slider/-/react-simple-image-slider-2.1.2.tgz#ecf4f46ed4e75e338ef36ce7c1fec161362d9b0b"
   integrity sha512-XpxnDEJF/HXMiGhdJNRkmCL1graacFbymPTz1DfVocM/9peU356CoOi4DkRxC8AEz4dZilme0njwBcSeWcDrXQ==
-
-react-useportal@^1.0.13:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/react-useportal/-/react-useportal-1.0.14.tgz#7bb1376c1b60b04f45020205eb440d7fbbbac097"
-  integrity sha512-NKLJsY+hgy/jFJlsIBJGK/8wBdTWstEaQNy300wRp7J5DFtNlRRbOpn+R3Z4j9mtQMTyG1ENc3tz09/9JxjQNQ==
-  dependencies:
-    use-ssr "^1.0.22"
 
 react@^17.0.2:
   version "17.0.2"
@@ -11429,20 +11390,6 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
-
-use-react-modal@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/use-react-modal/-/use-react-modal-0.0.9.tgz#395d80e0cf6c7ddebaa8d5e162d1dd30cd6cec15"
-  integrity sha512-IprWNgX+GUm+195TF2Qqn/CBhjODK+UsKSWyRZKM5B14d8brnUiL2sqLfaqaPJ2K8HERO1ietD0/lnP0/qVHeQ==
-  dependencies:
-    body-scroll-lock "^2.6.4"
-    react-useportal "^1.0.13"
-    use-ssr "^1.0.19"
-
-use-ssr@^1.0.19, use-ssr@^1.0.22:
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/use-ssr/-/use-ssr-1.0.24.tgz#213a3df58f5ab9268e6fe1a57ad0a9de91e514d1"
-  integrity sha512-0MFps7ezL57/3o0yl4CvrHLlp9z20n1rQZV/lSRz7if+TUoM6POU1XdOvEjIgjgKeIhTEye1U0khrIYWCTWw4g==
 
 use@^3.1.0:
   version "3.1.1"
