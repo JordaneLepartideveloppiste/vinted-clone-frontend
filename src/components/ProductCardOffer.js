@@ -25,21 +25,48 @@ const ProductCardOffer = ({
     <div className="product_card_offer">
       <div className="offer_content">
         <div className="images">
-          {pictures.length > 1 ? (
-            <SimpleImageSlider
-              width={380}
-              height={480}
-              images={images}
-              showBullets={false}
-              showNavs={true}
-              navSize={20}
-              navMargin={0}
-              navStyle={1}
-              slideDuration={0.7}
-            />
-          ) : (
-            <img src={image} alt="product_pic" width={380} height={500} />
-          )}
+          <div className="images_content">
+            <div className="image_main">
+              {pictures.length > 1 ? (
+                <SimpleImageSlider
+                  width={380}
+                  height={480}
+                  images={images}
+                  showBullets={false}
+                  showNavs={true}
+                  navSize={20}
+                  navMargin={0}
+                  navStyle={1}
+                  slideDuration={0.7}
+                  style={{ borderRadius: 4 }}
+                />
+              ) : (
+                <img src={image} alt="product_pic" width={380} height={480} />
+              )}
+            </div>
+            <div className="images_stamp">
+              {pictures.length > 1 ? (
+                pictures.map((elem, index) => {
+                  return (
+                    <img
+                      src={elem.secure_url}
+                      key={index}
+                      alt="product_pic"
+                      width={238}
+                      height={238}
+                    />
+                  );
+                })
+              ) : (
+                <>
+                  <img src={image} alt="product_pic" width={238} height={238} />
+                  <img src={image} alt="product_pic" width={238} height={238} />
+                  <img src={image} alt="product_pic" width={238} height={238} />
+                  <img src={image} alt="product_pic" width={238} height={238} />
+                </>
+              )}
+            </div>
+          </div>
           <div className="product_suggestion">
             <p className="member_items">(163) articles disponibles</p>
             <div className="big_buy">
@@ -55,37 +82,37 @@ const ProductCardOffer = ({
         <div className="product_info">
           <div className="product_price">
             <strong>{price} €</strong>
-          </div>
-          <div className="insurance">
-            <div className="icon_shield">
-              <FontAwesomeIcon
-                icon="shield-alt"
-                color="#0aaeb7"
-                className="icon_sh"
-              />
-            </div>
-            <p className="insurance_details">
-              Sois couvert·e par notre Protection acheteurs Vinted, qui inclut
-              notre <span id="politic">politique de remboursement</span>.
-            </p>
-          </div>
-          <div className="delivery">
-            <div className="deliv_relay">
-              <img src={relay} alt="mondial-relay" />
-              <span>Mondial Relay</span>
-              <span>3.51 €</span>
-            </div>
-            <div className="deliv_ups">
-              <img src={ups} alt="ups" />
-              <span>UPS Access Point</span>
-              <span>5.32 €</span>
-            </div>
-          </div>
-          <div className="protection">
-            <span>Frais de Protection acheteurs</span>
-            <p>0.70 € + 5% du prix de l'article</p>
-          </div>
 
+            <div className="insurance">
+              <div className="icon_shield">
+                <FontAwesomeIcon
+                  icon="shield-alt"
+                  color="#0aaeb7"
+                  className="icon_sh"
+                />
+              </div>
+              <p className="insurance_details">
+                Sois couvert·e par notre Protection acheteurs Vinted, qui inclut
+                notre <span id="politic">politique de remboursement</span>.
+              </p>
+            </div>
+            <div className="delivery">
+              <div className="deliv_relay">
+                <img src={relay} alt="mondial-relay" />
+                <span>Mondial Relay</span>
+                <span>3.51 €</span>
+              </div>
+              <div className="deliv_ups">
+                <img src={ups} alt="ups" />
+                <span>UPS Access Point</span>
+                <span>5.32 €</span>
+              </div>
+            </div>
+            <div className="protection">
+              <span>Frais de Protection acheteurs</span>
+              <p>0.70 € + 5% du prix de l'article</p>
+            </div>
+          </div>
           <div className="product_details">
             <ul>
               {details.map((elem, index) => {
