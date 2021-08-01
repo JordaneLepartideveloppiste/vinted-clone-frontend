@@ -63,7 +63,7 @@
           align-items: center;
           background-color: #f5f6f7;
           border-radius: 4px;
-          width: 90vw;
+          width: 95vw;
           padding: 0.5rem;
           margin-top: 0.5rem;
         .search_icon {
@@ -130,4 +130,19 @@
   }
 }
 @media screen and (max-width: 720px) {
+    .navbar {
+    .navbar_content {
+      .logo {
+          width: 15vw;
+      }
+    }
+    .sub_navbar {
+      .sub_navbar_content {
+        margin-left: 0.5rem;
+        button {
+          display: none;
+        }
+      }
+    }
+  }
 }
