@@ -11,22 +11,13 @@ const ProductList = ({data, product_image, product_price, product_name}) => {
         <div className="product_list_content">
           {data.offers.map(
             (
-              {
-                product_image,
-                product_price,
-                product_details,
-                product_name,
-                _id,
-              },
+              offer,
               index
             ) => {
               return (
-                <Link to={`/offer/${_id}`}>
+                <Link to={`/offer/${offer._id}`} key={index}>
                   <ProductCardHome
-                    product_image={product_image}
-                    product_price={product_price}
-                    product_details={product_details}
-                    product_name={product_name}
+                    {...offer}
                   />
                 </Link>
               );

@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import "../assets/css/components/SearchBar.scss"
 
 const SearchBar = () => {
     const [searchInput, setSearchInput] = useState("Rechercher des articles");

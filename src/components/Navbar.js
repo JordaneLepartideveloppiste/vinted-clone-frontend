@@ -4,71 +4,112 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ModalCo from "./ModalCo";
 import SearchBar from "./SearchBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Cookies from "js-cookie";
 
 
 
 const Navbar = ({userToken, setUser}) => {
 
+const [data, setData] = useState();
 const [showModal, setShowModal] = useState(false);
 const [modalOnLogin, setModalOnLogin] = useState(false);
+const [searchInput, setSearchInput] = useState("Rechercher des articles");
 
+
+
+
+
+const handleChange = (e) => {
+  setSearchInput(e.target.value);
+};
+const handleClick = () => {
+  setSearchInput("");
+};
   
   
     return (
-      <div className="navbar">
-        <div className="navbar_content">
-          <div className="logo">
-            <Link to="/">
-              <img src={logo} alt="logo_vinted" />
-            </Link>
-          </div>
-          <SearchBar />
-          <div className="connexion">
-            {userToken ? (
-              <button
-                id="logout_btn"
-                onClick={() => {
-                  setUser(null);
-                }}
-              >
-                Se déconnecter
-              </button>
-            ) : (
-              <>
+      <>
+        <div className="navbar">
+          <div className="navbar_content">
+            <div className="logo">
+              <Link to="/">
+                <img src={logo} alt="logo_vinted" />
+              </Link>
+            </div>
+            <SearchBar className="sb_in_navbar" />
+            <div className="connexion">
+              {userToken ? (
                 <button
-                  id="signup_btn"
-                  name="signup_btn"
+                  id="logout_btn"
                   onClick={() => {
-                    setShowModal(true);
-                    setModalOnLogin(false);
+                    setUser(null);
                   }}
                 >
-                  S'inscrire
+                  Se déconnecter
                 </button>
-                <button
-                  id="login_btn"
-                  name="login_btn"
-                  onClick={() => {
-                    setShowModal(true);
-                    setModalOnLogin(true);
-                  }}
-                >
-                  Se Connecter
-                </button>
-                {showModal && (
-                  <ModalCo
-                    setShowModal={setShowModal}
-                    setModalOnLogin={setModalOnLogin}
-                    modalOnLogin={modalOnLogin}
-                    setUser={setUser}
-                  />
-                )}
-              </>
-            )}
+              ) : (
+                <>
+                  <button
+                    id="signup_btn"
+                    name="signup_btn"
+                    onClick={() => {
+                      setShowModal(true);
+                      setModalOnLogin(false);
+                    }}
+                  >
+                    S'inscrire
+                  </button>
+                  <button
+                    id="login_btn"
+                    name="login_btn"
+                    onClick={() => {
+                      setShowModal(true);
+                      setModalOnLogin(true);
+                    }}
+                  >
+                    Se Connecter
+                  </button>
+                  {showModal && (
+                    <ModalCo
+                      setShowModal={setShowModal}
+                      setModalOnLogin={setModalOnLogin}
+                      modalOnLogin={modalOnLogin}
+                      setUser={setUser}
+                    />
+                  )}
+                </>
+              )}
+            </div>
+            <button id="sale_now_btn1">Vends maintenant</button>
+            <FontAwesomeIcon
+              icon="bars"
+              className="menu_burger"
+              color="rgba(76, 76, 76, 0.6)"
+            />
           </div>
-          <button id="sale_now_btn1">Vends maintenant</button>
+          <div className="sub_navbar">
+            <div className="sub_navbar_content">
+              <div className="sb_in_subnavbar">
+                <FontAwesomeIcon icon="search" color="rgba(76, 76, 76, 0.6)" className="search_icon" />
+                <input
+                  type="text"
+                  id="search_input"
+                  value={searchInput}
+                  onChange={handleChange}
+                  onClick={handleClick}
+                />
+              </div>
+              <button>Femmes</button>
+              <button>Hommes</button>
+              <button>Enfants</button>
+              <button>Maison</button>
+              <button>À propos</button>
+              <button>Notre Plateforme</button>
+            </div>
+          </div>
         </div>
-      </div>
+      </>
     );
 };
 

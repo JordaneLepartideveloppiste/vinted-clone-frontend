@@ -1,71 +1,133 @@
 .navbar {
+  border-bottom: lightgray 1px solid;
+  .navbar_content {
     border-bottom: lightgray 1px solid;
-    .navbar_content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .logo {
-            width: 10vw;
-            margin-left: 1.5rem;
-            img {
-                width: 80%;
-            }
-        }
-        
-
-        .search {
-            background-color:  rgb(236, 241, 241);
-            border-radius: 4px;
-            width: 30vw;
-            padding: 0.5rem;
-
-            .multi-select {
-
-            }
-
-            #search_input {
-                width: 25vw;
-                border: none;
-                background-color:  rgb(236, 241, 241);
-                color: rgba(76, 76, 76, 0.6);
-                padding: 0 1rem;
-
-                &:focus {
-                    outline: none !important;
-                }
-            }
-        }
-
-        .connexion {
-            margin-right: -3rem;
-            width: 25vw;
-            #signup_btn, #login_btn, #logout_btn  {
-                width: 10vw;
-                background-color: #fff;
-                margin-right: 1rem;
-                color: #0aaeb7;
-                padding: 0.4rem;
-                border-radius: 4px;
-                border: 1px solid #0aaeb7;
-
-                &:hover {
-                    background-color: #0aaeb7;
-                    color: #fff;
-                    border: none;
-                }
-            }
-
-            
-        }
-
-        #sale_now_btn1 {
-            padding: 0.4rem 0.6rem;
-            margin-right: 1.5rem;
-            border-radius: 4px;
-            color: white;
-            background-color: #0aaeb7;
-            border: none;
-        }
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      width: 10vw;
+      margin-left: 1.5rem;
+      img {
+        width: 80%;
+      }
     }
+
+    .connexion {
+      margin-right: -3rem;
+      width: 25vw;
+      #signup_btn,
+      #login_btn,
+      #logout_btn {
+        width: 10vw;
+        background-color: #fff;
+        margin-right: 1rem;
+        color: #0aaeb7;
+        padding: 0.4rem;
+        border-radius: 4px;
+        border: 1px solid #0aaeb7;
+
+        &:hover {
+          background-color: #0aaeb7;
+          color: #fff;
+          border: none;
+        }
+      }
+    }
+
+    #sale_now_btn1 {
+      padding: 0.4rem 0.6rem;
+      margin-right: 1.5rem;
+      border-radius: 4px;
+      color: white;
+      background-color: #0aaeb7;
+      border: none;
+    }
+
+    .menu_burger {
+      display: none;
+    }
+  }
+
+  .sub_navbar {
+    width: 100vw;
+    height: 3.2rem;
+    .sub_navbar_content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-left: 1rem;
+
+      .sb_in_subnavbar {
+          display: none;
+          align-items: center;
+          background-color: #f5f6f7;
+          border-radius: 4px;
+          width: 90vw;
+          padding: 0.5rem;
+          margin-top: 0.5rem;
+        .search_icon {
+         
+        }
+        #search_input {
+           
+          font-size: 1rem;
+            width: 85vw;
+            border: none;
+            background-color: #f5f6f7;
+            color: rgba(76, 76, 76, 0.6);
+            padding: 0 1rem;
+
+            &:focus {
+              outline: none !important;
+            }
+        }
+      }
+
+      button {
+        border: none;
+        background-color: #fff;
+        color: #888888;
+        height: 100%;
+        padding: 1rem;
+        font-size: 0.9rem;
+
+        &:hover {
+          background-color: #f5f6f6;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .navbar {
+    .navbar_content {
+      .connexion {
+        display: none;
+      }
+      #sale_now_btn1 {
+        display: none;
+      }
+
+      .menu_burger {
+        display: block;
+        margin-right: 1.5rem;
+      }
+    }
+    .sub_navbar {
+      .sub_navbar_content {
+        .sb_in_subnavbar {
+          display: flex;
+
+          
+        }
+        button {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 720px) {
 }
