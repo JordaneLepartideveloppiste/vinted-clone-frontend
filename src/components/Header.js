@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../assets/css/components/Header.scss"
-import scrap from "../assets/img/banner_scrape.png"
+/* import scrap from "../assets/img/banner_scrape.png" */
 
 
 const Header = ({userToken, showModal, setShowModal, modalOnLogin, setModalOnLogin}) => {
@@ -31,7 +31,7 @@ const Header = ({userToken, showModal, setShowModal, modalOnLogin, setModalOnLog
             <span id="discover">Découvrir comment ça marche</span>
           </div>
         </div>
-        <img src={scrap} alt="scrap_bottom" />
+        {/* <img src={scrap} alt="scrap_bottom" /> */}
       </div>
     );
 };

@@ -1,0 +1,32 @@
+.checkout_form {
+    p {
+        text-align: center;
+        font-size: 1.8rem;
+        color:rgba(76, 76, 76, 0.6);
+        margin-bottom: 2rem;
+
+    }
+
+    form {
+        input {
+            width: 20vw;
+            margin: 0 10rem;
+            margin-top: 4rem;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+          background-color: #fff;
+          color: #0aaeb7;
+          border: 2px solid #0aaeb7;
+
+          &:hover {
+              border: 2px solid #0aaeb7;
+              color: #fff;
+              background-color: #0aaeb7;
+              box-shadow: 0px 12px 20px 3px #0bd0db inset;
+          }
+        }
+    }
+}

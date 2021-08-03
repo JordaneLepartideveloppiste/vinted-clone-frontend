@@ -4,14 +4,15 @@ import Home from "./containers/Home";
 import Offer from "./containers/Offer";import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faSearch, faHeart, faShieldAlt, faBars
+  faSearch, faHeart, faShieldAlt, faBars, faMinusCircle, faPlusCircle
 } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import Publish from "./containers/Publish";
 import Payment from "./containers/Payment";
-library.add(faSearch, faHeart, faShieldAlt, faBars);
+import PaymentSucceeded from "./containers/PaymentSucceeded";
+library.add(faSearch, faHeart, faShieldAlt, faBars, faMinusCircle, faPlusCircle);
 
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
         </Route>
         <Route path="/payment">
           <Payment />
+        </Route>
+        <Route path="/success">
+          <PaymentSucceeded />
         </Route>
         <Route path="/">
           <Home

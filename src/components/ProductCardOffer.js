@@ -3,7 +3,7 @@ import "../assets/css/components/ProductCardOffer.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import relay from "../assets/img/mondial_relay.png";
 import ups from "../assets/img/ups.png";
-import { Link, useHistory } from "react-router-dom";
+ import { Link, useHistory } from "react-router-dom";
 
 const ProductCardOffer = ({
   image,
@@ -22,11 +22,22 @@ const ProductCardOffer = ({
 
   const history = useHistory();
 
+  /* const [list, setList] = useState([]);*/
 
-
-  const handleClick = () => {
+  const handleClick = (/* clickedId, name, price, index */) => {
+    /* const newList = [...list];
+    //list.map((el) => el.id).indexOf(clickedId) !== -1
+    const exist = newList.find((elem) => elem.id === clickedId);
+    console.log(exist);
+    if (exist) {
+      console.log("déjà");
+      exist.counter++;
+    } else {
+      newList.push({ counter: 1, title: name, amount: price, id: clickedId });
+    }
+    setList(newList);  */
     history.push("/payment", { title: name, amount: price, userId: owner._id });
-  }
+  };
 
   return (
     <div className="product_card_offer">
@@ -69,8 +80,20 @@ const ProductCardOffer = ({
                 <>
                   <img src={image} alt="product_pic" width={238} height={238} />
                   <img src={image} alt="product_pic" width={238} height={238} />
-                  <img className="bonus" src={image} alt="product_pic" width={238} height={238} />
-                  <img className="bonus" src={image} alt="product_pic" width={238} height={238} />
+                  <img
+                    className="bonus"
+                    src={image}
+                    alt="product_pic"
+                    width={238}
+                    height={238}
+                  />
+                  <img
+                    className="bonus"
+                    src={image}
+                    alt="product_pic"
+                    width={238}
+                    height={238}
+                  />
                 </>
               )}
             </div>
@@ -141,7 +164,9 @@ const ProductCardOffer = ({
           </div>
           <div className="offer_buttons">
             <button className="send_msg">Échanger avec {owner}</button>
-            <button className="buy" onClick={handleClick}>Acheter</button>
+            <button className="buy" onClick={handleClick}>
+              Acheter
+            </button>
             <button className="favorite">
               <FontAwesomeIcon icon="heart" /> Favoris
             </button>
