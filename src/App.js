@@ -9,12 +9,16 @@ import {
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 import Cookies from "js-cookie";
+import Publish from "./containers/Publish";
+import Payment from "./containers/Payment";
 library.add(faSearch, faHeart, faShieldAlt, faBars);
 
 
 function App() {
 
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
+  const [showModal, setShowModal] = useState(false);
+  const [modalOnLogin, setModalOnLogin] = useState(false);
 
   const setUser = (token) => {
     Cookies.set("userToken", token, { expires: 30 });
@@ -23,13 +27,32 @@ function App() {
   
   return (
     <Router>
-      <Navbar setUser={setUser} userToken={userToken}/>
+      <Navbar
+        setUser={setUser}
+        userToken={userToken}
+        setShowModal={setShowModal}
+        setModalOnLogin={setModalOnLogin}
+        showModal={showModal}
+        modalOnLogin={modalOnLogin}
+      />
       <Switch>
         <Route path="/offer/:id">
           <Offer />
         </Route>
+        <Route path="/publish">
+          <Publish userToken={userToken} />
+        </Route>
+        <Route path="/payment">
+          <Payment />
+        </Route>
         <Route path="/">
-          <Home />
+          <Home
+            userToken={userToken}
+            setShowModal={setShowModal}
+            setModalOnLogin={setModalOnLogin}
+            showModal={showModal}
+            modalOnLogin={modalOnLogin}
+          />
         </Route>
       </Switch>
     </Router>

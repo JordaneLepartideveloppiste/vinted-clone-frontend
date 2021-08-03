@@ -1,0 +1,15 @@
+.publish {
+    .publish_content {
+        form {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+            input {
+                width: 80vw;
+                margin-top: 1rem;
+            }
+        }
+    }
+}

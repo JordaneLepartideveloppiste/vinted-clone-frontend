@@ -110,6 +110,7 @@
           .deliv_ups {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-bottom: 0.4rem;
           }
           .deliv_relay > img {
@@ -203,7 +204,7 @@
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 960px ) {
   .product_card_offer {
     .offer_content {
       flex-direction: column;
@@ -259,10 +260,7 @@
               margin-left: 0;
             }
             .deliv_ups {
-              margin-left: 0;
-              img {
-                margin-left: 0.9rem;
-              }
+              margin-left: 0.9rem;
             }
           }
           .protection {
@@ -278,12 +276,6 @@
 
           ul {
             margin-bottom: 10rem;
-            .detail {
-              .detail_key {
-              }
-              .detail_val {
-              }
-            }
           }
 
           .basic_offer {
@@ -328,14 +320,104 @@
     .offer_content {
       flex-direction: column;
       .images {
+          margin-left: 1.4rem;
+          .images_content {
+              .image_main {
+
+              }
+              .images_stamp {
+                  img {
+                      width: 290px;
+                      object-fit: cover;
+                  }
+                .stamp0 {
+                    display: none;
+                }
+                  .bonus {
+                      display: none;
+                  }
+              }
+          }
         .product_suggestion {
           display: none;
-          .member_items {
-          }
-          .big_buy {
-          }
+          
         }
       }
+      .product_info {
+        margin-left: 2.2rem;
+        margin-bottom: 2rem;
+        padding-left: 1rem;
+        width: 90vw;
+        .product_price {
+          width: 90vw;
+          .insurance {
+              padding-left: 3rem;
+            margin-bottom: 0.3rem;
+            padding-bottom: 0.1rem;
+            .icon_shield {
+              width: 1.8rem;
+              .icon_sh {
+                margin-left: 0.35rem;
+              }
+              .insurance_details {
+                font-size: 0.6rem;
+                margin-bottom: 0.1rem;
+                margin-top: 0.3rem;
+              }
+            }
+          }
+
+          .delivery {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+
+            
+          }
+          .protection {
+            font-size: 0.8rem;
+            p {
+              margin: 0.3rem;
+            }
+          }
+        }
+
+        .product_details {
+          margin-top: 17rem;
+
+          ul {
+            margin-bottom: 1rem;
+          }
+
+          .basic_offer {
+            width: 108%;
+            margin: 0;
+            margin-left: -1rem;
+            border-top: 1px solid lightgray;
+            #name {
+              font-size: 1.6rem;
+              margin-left: 2rem;
+              margin-bottom: 0;
+            }
+            #description {
+              margin-top: 0.3rem;
+              margin-left: 2rem;
+              font-size: 1.2rem;
+            }
+          }
+        }
+        .offer_buttons {
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+          .send_msg,
+          .buy,
+          .favorite {
+            width: 90vw;
+            font-size: 1.2rem;
+
+          }
+        }
+    }
     }
   }
 }

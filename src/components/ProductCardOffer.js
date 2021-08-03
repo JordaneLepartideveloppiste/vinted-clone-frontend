@@ -3,6 +3,7 @@ import "../assets/css/components/ProductCardOffer.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import relay from "../assets/img/mondial_relay.png";
 import ups from "../assets/img/ups.png";
+import { Link, useHistory } from "react-router-dom";
 
 const ProductCardOffer = ({
   image,
@@ -19,7 +20,13 @@ const ProductCardOffer = ({
     images.push({ url: pictures[i].secure_url });
   }
 
-  console.log(images);
+  const history = useHistory();
+
+
+
+  const handleClick = () => {
+    history.push("/payment", { title: name, amount: price, userId: owner._id });
+  }
 
   return (
     <div className="product_card_offer">
@@ -54,6 +61,7 @@ const ProductCardOffer = ({
                       alt="product_pic"
                       width={238}
                       height={238}
+                      className={`stamp${index}`}
                     />
                   );
                 })
@@ -61,8 +69,8 @@ const ProductCardOffer = ({
                 <>
                   <img src={image} alt="product_pic" width={238} height={238} />
                   <img src={image} alt="product_pic" width={238} height={238} />
-                  <img src={image} alt="product_pic" width={238} height={238} />
-                  <img src={image} alt="product_pic" width={238} height={238} />
+                  <img className="bonus" src={image} alt="product_pic" width={238} height={238} />
+                  <img className="bonus" src={image} alt="product_pic" width={238} height={238} />
                 </>
               )}
             </div>
@@ -133,7 +141,7 @@ const ProductCardOffer = ({
           </div>
           <div className="offer_buttons">
             <button className="send_msg">Échanger avec {owner}</button>
-            <button className="buy">Acheter</button>
+            <button className="buy" onClick={handleClick}>Acheter</button>
             <button className="favorite">
               <FontAwesomeIcon icon="heart" /> Favoris
             </button>

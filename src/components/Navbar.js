@@ -5,15 +5,14 @@ import { Link } from "react-router-dom";
 import ModalCo from "./ModalCo";
 import SearchBar from "./SearchBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Cookies from "js-cookie";
 
 
 
-const Navbar = ({userToken, setUser}) => {
 
-const [data, setData] = useState();
-const [showModal, setShowModal] = useState(false);
-const [modalOnLogin, setModalOnLogin] = useState(false);
+const Navbar = ({userToken, setUser, showModal, setShowModal, modalOnLogin, setModalOnLogin}) => {
+
+
+
 const [searchInput, setSearchInput] = useState("Rechercher des articles");
 
 
@@ -81,7 +80,15 @@ const handleClick = () => {
                 </>
               )}
             </div>
-            <button id="sale_now_btn1">Vends maintenant</button>
+            {userToken ? (
+              <Link to="/publish">
+                <button id="sale_now_btn1">Vends maintenant</button>
+              </Link>
+            ) : (
+              <button id="sale_now_btn1" onClick = {() => {setShowModal(true);
+              setModalOnLogin(true);}}>Vends maintenant</button>
+            )}
+
             <FontAwesomeIcon
               icon="bars"
               className="menu_burger"
@@ -91,10 +98,14 @@ const handleClick = () => {
           <div className="sub_navbar">
             <div className="sub_navbar_content">
               <div className="sb_in_subnavbar">
-                <FontAwesomeIcon icon="search" color="rgba(76, 76, 76, 0.6)" className="search_icon" />
+                <FontAwesomeIcon
+                  icon="search"
+                  color="rgba(76, 76, 76, 0.6)"
+                  className="search_icon"
+                />
                 <input
                   type="text"
-                  id="search_input"
+                  className="search_input"
                   value={searchInput}
                   onChange={handleChange}
                   onClick={handleClick}
